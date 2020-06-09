@@ -1,0 +1,53 @@
+.container {
+  margin-top: 1.25rem;
+}
+
+a {
+  background-color: #fffbe6;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+a:hover {
+  background-color: #f7f3df;
+}
+
+span {
+  position: relative;
+  transition: 0.4s;
+}
+
+span:before, span:after {
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.left-arrow span:before {
+  content: '\00ab';
+  position: absolute;
+  left: -1rem;
+}
+
+.right-arrow span:after {
+  content: '\00bb';
+  position: absolute;
+  right: -1rem;
+}
+
+.left-arrow:hover span {
+  padding-left: 0.75rem;
+}
+
+.right-arrow:hover span {
+  padding-right: 0.75rem;
+}
+
+.left-arrow:hover span:before {
+  opacity: 1;
+  left: -0.35rem;
+}
+
+.right-arrow:hover span:after {
+  opacity: 1;
+  right: -0.35rem;
+}
