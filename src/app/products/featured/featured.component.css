@@ -5,3 +5,36 @@
 ul {
   list-style-type: none;
 }
+
+.inner-container {
+  padding-top: 0.7rem;
+  background-color: #fffbe6;
+}
+
+li {
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #f7f3df;
+}
+
+.active-pref {
+  background-color: #ebebcf;
+}
+
+.active-pref:hover {
+  background-color: #ebebcf;
+}
+
+/* The stlying below is for a dummy toggle link that should be changed to up and down arrows */
+a {
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+}
+
+a:hover {
+  background-color: #f7f3df;
+}

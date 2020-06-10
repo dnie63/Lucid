@@ -1,32 +1,35 @@
 <div class="container outer-container">
   <div class="row justify-content-sm-center">
     <div class="col-sm-auto">
-      <div class="container inner-container">
+      <div class="container rounded inner-container">
         <div class="row justify-content-sm-center">
           <div class="col-sm-auto">
             <span class="font-weight-bold">Preferences:</span>
           </div>
-          <div class="col-sm-auto">
-            <ul>
-              <li>Men</li>
-              <li>Women</li>
+          <div class="col-sm-auto first-cont">
+            <ul class="first-list">
+              <li class="rounded" (click)="onClickGender('men')" [class.active-pref]="preferences['men']">Men</li>
+              <li class="rounded" (click)="onClickGender('women')" [class.active-pref]="preferences['women']">Women</li>
             </ul>
           </div>
-          <div class="col-sm-auto">
-            <ul>
-              <li>Tops</li>
-              <li>Bottoms</li>
-              <li>Shoes</li>
+          <div class="col-sm-auto second-cont">
+            <ul class="second-list">
+              <li class="rounded" (click)="onClickType('tops')" [class.active-pref]="preferences['tops']">Tops</li>
+              <li class="rounded" (click)="onClickType('bottoms')" [class.active-pref]="preferences['bottoms']">Bottoms</li>
+              <li class="rounded" (click)="onClickType('shoes')" [class.active-pref]="preferences['shoes']">Shoes</li>
             </ul>
           </div>
-          <div class="col-sm-auto">
-            <ul>
-              <li>Casual</li>
-              <li>Boujee</li>
-              <li>Semi-formal</li>
-              <li>Business</li>
+          <div class="col-sm-auto third-cont">
+            <ul class="third-list">
+              <li class="rounded" (click)="onClickMood('casual')" [class.active-pref]="preferences['casual']">Casual</li>
+              <li class="rounded" (click)="onClickMood('boujee')" [class.active-pref]="preferences['boujee']">Boujee</li>
+              <li class="rounded" (click)="onClickMood('semi-formal')" [class.active-pref]="preferences['semi-formal']">Semi-Formal</li>
+              <li class="rounded" (click)="onClickMood('business')" [class.active-pref]="preferences['business']">Business</li>
             </ul>
           </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <a class="text-center font-weight-bold rounded">Toggle</a>
         </div>
       </div>
     </div>
