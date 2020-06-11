@@ -30,6 +30,12 @@ li:hover {
   background-color: #ebebcf;
 }
 
+/* This styling was used to fix a bug where the first column placeholders would change colors on hover
+    for some reason that I still don't know why */
+.placeholder li:hover {
+  background-color: #fffbe6;
+}
+
 /* The styling below is used to view and collapse the preferences box */
 .no-view {
   opacity: 0;
@@ -67,7 +73,7 @@ li:hover {
   transition: height 0.5s;
 }
 
-/* The styling below is for a dummy toggle link that should be changed to up and down arrows */
+/* The styling below is for a dummy toggle link that should be changed to up and down arrows later */
 a {
   padding: 0.2rem 0.4rem;
   cursor: pointer;
