@@ -1,36 +1,45 @@
 <div class="container outer-container">
   <div class="row justify-content-sm-center">
-    <div class="col-sm-auto">
-      <div class="container rounded inner-container">
+    <div class="col-sm-auto rounded inner-container">
+      <div class="container" [class]="{'hide-preferences': !viewPreferences, 'show-preferences': viewPreferences}">
         <div class="row justify-content-sm-center">
           <div class="col-sm-auto">
             <span class="font-weight-bold">Preferences:</span>
           </div>
-          <div class="col-sm-auto first-cont">
-            <ul class="first-list">
-              <li class="rounded" (click)="onClickGender('men')" [class.active-pref]="preferences['men']">Men</li>
-              <li class="rounded" (click)="onClickGender('women')" [class.active-pref]="preferences['women']">Women</li>
+          <div class="col-sm-auto">
+            <ul [class.disappear]="viewPreferences">
+              <li class="not-clickable" [class.no-view]="!viewSelectedGender">{{selectedGender}}</li>
+            </ul>
+            <ul [class]="{'actual-list': !viewPreferences, 'view-list': viewPreferences}">
+              <li class="rounded" (click)="onClickGender('men')" [class]="{'active-pref': preferences['men'], 'not-clickable': !viewPreferences}">Men</li>
+              <li class="rounded" (click)="onClickGender('women')" [class]="{'active-pref': preferences['women'], 'not-clickable': !viewPreferences}">Women</li>
             </ul>
           </div>
-          <div class="col-sm-auto second-cont">
-            <ul class="second-list">
-              <li class="rounded" (click)="onClickType('tops')" [class.active-pref]="preferences['tops']">Tops</li>
-              <li class="rounded" (click)="onClickType('bottoms')" [class.active-pref]="preferences['bottoms']">Bottoms</li>
-              <li class="rounded" (click)="onClickType('shoes')" [class.active-pref]="preferences['shoes']">Shoes</li>
+          <div class="col-sm-auto">
+            <ul [class.disappear]="viewPreferences">
+              <li class="not-clickable" [class.no-view]="!viewSelectedType">{{selectedType}}</li>
+            </ul>
+            <ul [class]="{'actual-list': !viewPreferences, 'view-list': viewPreferences}">
+              <li class="rounded" (click)="onClickType('tops')" [class]="{'active-pref': preferences['tops'], 'not-clickable': !viewPreferences}">Tops</li>
+              <li class="rounded" (click)="onClickType('bottoms')" [class]="{'active-pref': preferences['bottoms'], 'not-clickable': !viewPreferences}">Bottoms</li>
+              <li class="rounded" (click)="onClickType('shoes')" [class]="{'active-pref': preferences['shoes'], 'not-clickable': !viewPreferences}">Shoes</li>
             </ul>
           </div>
-          <div class="col-sm-auto third-cont">
-            <ul class="third-list">
-              <li class="rounded" (click)="onClickMood('casual')" [class.active-pref]="preferences['casual']">Casual</li>
-              <li class="rounded" (click)="onClickMood('boujee')" [class.active-pref]="preferences['boujee']">Boujee</li>
-              <li class="rounded" (click)="onClickMood('semi-formal')" [class.active-pref]="preferences['semi-formal']">Semi-Formal</li>
-              <li class="rounded" (click)="onClickMood('business')" [class.active-pref]="preferences['business']">Business</li>
+          <div class="col-sm-auto">
+            <ul [class.disappear]="viewPreferences">
+              <li class="not-clickable" [class.no-view]="!viewSelectedMood">{{selectedMood}}</li>
+            </ul>
+            <ul [class]="{'actual-list': !viewPreferences, 'view-list': viewPreferences}">
+              <li class="rounded" (click)="onClickMood('casual')" [class]="{'active-pref': preferences['casual'], 'not-clickable': !viewPreferences}">Casual</li>
+              <li class="rounded" (click)="onClickMood('boujee')" [class]="{'active-pref': preferences['boujee'], 'not-clickable': !viewPreferences}">Boujee</li>
+              <li class="rounded" (click)="onClickMood('semi-formal')" [class]="{'active-pref': preferences['semi-formal'], 'not-clickable': !viewPreferences}">Semi-Formal</li>
+              <li class="rounded" (click)="onClickMood('business')" [class]="{'active-pref': preferences['business'], 'not-clickable': !viewPreferences}">Business</li>
             </ul>
           </div>
         </div>
-        <div class="d-flex justify-content-center">
-          <a class="text-center font-weight-bold rounded">Toggle</a>
-        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a class="text-center font-weight-bold rounded" (click)="onClickViewPref()">Show/Hide Options</a>
       </div>
     </div>
   </div>

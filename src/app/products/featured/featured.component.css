@@ -2,18 +2,20 @@
   margin-top: 1.75rem;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .inner-container {
   padding-top: 0.7rem;
   background-color: #fffbe6;
 }
 
+ul {
+  list-style-type: none;
+}
+
 li {
+  white-space: pre;
   padding: 0.2rem 0.4rem;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 li:hover {
@@ -28,7 +30,44 @@ li:hover {
   background-color: #ebebcf;
 }
 
-/* The stlying below is for a dummy toggle link that should be changed to up and down arrows */
+/* The styling below is used to view and collapse the preferences box */
+.no-view {
+  opacity: 0;
+}
+
+.not-clickable {
+  cursor: default;
+}
+
+.disappear {
+  display: none;
+}
+
+.actual-list {
+  position: absolute;
+  top: -2.75rem;
+  opacity: 0;
+  transition: opacity 0.3s, top 1s;
+}
+
+.view-list {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  transition: top 0.5s, opacity 0.5s 0.1s;
+}
+
+.hide-preferences {
+  height: 3rem;
+  transition: height 0.5s;
+}
+
+.show-preferences {
+  height: 9rem;
+  transition: height 0.5s;
+}
+
+/* The styling below is for a dummy toggle link that should be changed to up and down arrows */
 a {
   padding: 0.2rem 0.4rem;
   cursor: pointer;
