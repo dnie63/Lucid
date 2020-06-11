@@ -18,7 +18,7 @@ li {
   transition: 0.2s;
 }
 
-li:hover {
+.content-list li:hover {
   background-color: #f7f3df;
 }
 
@@ -28,12 +28,6 @@ li:hover {
 
 .active-pref:hover {
   background-color: #ebebcf;
-}
-
-/* This styling was used to fix a bug where the first column placeholders would change colors on hover
-    for some reason that I still don't know why */
-.placeholder li:hover {
-  background-color: #fffbe6;
 }
 
 /* The styling below is used to view and collapse the preferences box */
