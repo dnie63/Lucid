@@ -30,6 +30,15 @@ li {
   background-color: #ebebcf;
 }
 
+.nav-arrow {
+  cursor: pointer;
+  padding-bottom: 0.2rem;
+}
+
+.nav-arrow:hover {
+  background-color: #f7f3df;
+}
+
 /* The styling below is used to view and collapse the preferences box */
 .no-view {
   opacity: 0;
@@ -61,15 +70,4 @@ li {
 .show-preferences {
   height: 9rem;
   transition: height 0.5s;
-}
-
-/* The styling below is for a dummy toggle link that should be changed to up and down arrows later */
-a {
-  padding: 0.2rem 0.4rem;
-  cursor: pointer;
-  margin-bottom: 0.3rem;
-}
-
-a:hover {
-  background-color: #f7f3df;
 }

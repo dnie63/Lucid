@@ -27,6 +27,9 @@ export class FeaturedComponent {
   viewSelectedMood = false;
   viewPreferences = false;
 
+  downArrowPath = "./assets/images/down-arrow.svg";
+  upArrowPath = "./assets/images/up-arrow.svg";
+
   onClickViewPref() {
     this.viewPreferences = !this.viewPreferences;
   }

@@ -39,7 +39,9 @@
         </div>
       </div>
       <div class="d-flex justify-content-center">
-        <a class="text-center font-weight-bold rounded" (click)="onClickViewPref()">Show/Hide Options</a>
+        <a class="rounded-top nav-arrow" (click)="onClickViewPref()">
+          <img [src]="viewPreferences ? upArrowPath : downArrowPath" alt="down arrow" height="15" width="40">
+        </a>
       </div>
     </div>
   </div>
