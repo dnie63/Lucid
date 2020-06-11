@@ -7,29 +7,29 @@
             <span class="font-weight-bold">Preferences:</span>
           </div>
           <div class="col-sm-auto">
-            <ul [class.disappear]="viewPreferences">
+            <ul [class]="{'hide-list': viewPreferences, 'show-list': !viewPreferences}">
               <li class="not-clickable" [class.no-view]="!viewSelectedGender">{{selectedGender}}</li>
             </ul>
-            <ul class="content-list" [class]="{'actual-list': !viewPreferences, 'view-list': viewPreferences}">
+            <ul class="content-list" [class]="{'hide-list': !viewPreferences, 'show-list': viewPreferences}">
               <li class="rounded" (click)="onClickGender('men')" [class]="{'active-pref': preferences['men'], 'not-clickable': !viewPreferences}">Men</li>
               <li class="rounded" (click)="onClickGender('women')" [class]="{'active-pref': preferences['women'], 'not-clickable': !viewPreferences}">Women</li>
             </ul>
           </div>
           <div class="col-sm-auto">
-            <ul [class.disappear]="viewPreferences">
+            <ul [class]="{'hide-list': viewPreferences, 'show-list': !viewPreferences}">
               <li class="not-clickable" [class.no-view]="!viewSelectedType">{{selectedType}}</li>
             </ul>
-            <ul class="content-list" [class]="{'actual-list': !viewPreferences, 'view-list': viewPreferences}">
+            <ul class="content-list" [class]="{'hide-list': !viewPreferences, 'show-list': viewPreferences}">
               <li class="rounded" (click)="onClickType('tops')" [class]="{'active-pref': preferences['tops'], 'not-clickable': !viewPreferences}">Tops</li>
               <li class="rounded" (click)="onClickType('bottoms')" [class]="{'active-pref': preferences['bottoms'], 'not-clickable': !viewPreferences}">Bottoms</li>
               <li class="rounded" (click)="onClickType('shoes')" [class]="{'active-pref': preferences['shoes'], 'not-clickable': !viewPreferences}">Shoes</li>
             </ul>
           </div>
           <div class="col-sm-auto">
-            <ul [class.disappear]="viewPreferences">
+            <ul [class]="{'hide-list': viewPreferences, 'show-list': !viewPreferences}">
               <li class="not-clickable" [class.no-view]="!viewSelectedMood">{{selectedMood}}</li>
             </ul>
-            <ul class="content-list" [class]="{'actual-list': !viewPreferences, 'view-list': viewPreferences}">
+            <ul class="content-list" [class]="{'hide-list': !viewPreferences, 'show-list': viewPreferences}">
               <li class="rounded" (click)="onClickMood('casual')" [class]="{'active-pref': preferences['casual'], 'not-clickable': !viewPreferences}">Casual</li>
               <li class="rounded" (click)="onClickMood('boujee')" [class]="{'active-pref': preferences['boujee'], 'not-clickable': !viewPreferences}">Boujee</li>
               <li class="rounded" (click)="onClickMood('semi-formal')" [class]="{'active-pref': preferences['semi-formal'], 'not-clickable': !viewPreferences}">Semi-Formal</li>

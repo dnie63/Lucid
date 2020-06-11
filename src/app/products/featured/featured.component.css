@@ -39,18 +39,14 @@ li {
   cursor: default;
 }
 
-.disappear {
-  display: none;
-}
-
-.actual-list {
+.hide-list {
   position: absolute;
-  top: -2.75rem;
+  top: -3rem;
   opacity: 0;
   transition: opacity 0.3s, top 1s;
 }
 
-.view-list {
+.show-list {
   position: relative;
   top: 0;
   opacity: 1;
