@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FeaturedComponent } from './products/featured/featured.component';
+import { FeaturedPreferencesComponent } from './products/featured/preferences/preferences.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FeaturedComponent
+    FeaturedComponent,
+    FeaturedPreferencesComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

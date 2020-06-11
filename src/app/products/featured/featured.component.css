@@ -1,73 +1,12 @@
 .outer-container {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 
-.inner-container {
-  padding-top: 0.7rem;
+.container-products {
+  margin-bottom: 3rem;
   background-color: #fffbe6;
 }
 
-ul {
-  list-style-type: none;
-}
-
-li {
-  white-space: pre;
-  padding: 0.2rem 0.4rem;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.content-list li:hover {
-  background-color: #f7f3df;
-}
-
-.active-pref {
-  background-color: #ebebcf;
-}
-
-.active-pref:hover {
-  background-color: #ebebcf;
-}
-
-.nav-arrow {
-  cursor: pointer;
-  padding-bottom: 0.2rem;
-}
-
-.nav-arrow:hover {
-  background-color: #f7f3df;
-}
-
-/* The styling below is used to view and collapse the preferences box */
-.no-view {
-  opacity: 0;
-}
-
-.not-clickable {
-  cursor: default;
-}
-
-.hide-list {
-  position: absolute;
-  top: -3rem;
-  opacity: 0;
-  transition: opacity 0.3s, top 1s;
-}
-
-.show-list {
-  position: relative;
-  top: 0;
-  opacity: 1;
-  transition: top 0.5s, opacity 0.5s 0.1s;
-}
-
-.hide-preferences {
-  height: 3rem;
-  transition: height 0.5s;
-}
-
-.show-preferences {
-  height: 9rem;
-  transition: height 0.5s;
+.row-products {
+  padding-top: 1rem;
 }
