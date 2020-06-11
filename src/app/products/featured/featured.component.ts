@@ -32,6 +32,9 @@ export class FeaturedComponent {
   }
 
   onClickGender(gender: string) {
+    if (!this.viewPreferences) {
+      return;
+    }
     switch (gender) {
       case 'men':
         if (this.preferences[gender]) {
@@ -59,6 +62,9 @@ export class FeaturedComponent {
   }
 
   onClickType(type: string) {
+    if (!this.viewPreferences) {
+      return;
+    }
     switch (type) {
       case 'tops':
         if (this.preferences[type]) {
@@ -100,6 +106,9 @@ export class FeaturedComponent {
   }
 
   onClickMood(mood: string) {
+    if (!this.viewPreferences) {
+      return;
+    }
     switch (mood) {
       case 'casual':
         if (this.preferences[mood]) {
