@@ -4,7 +4,7 @@
 
 .inner-container {
   padding-top: 0.7rem;
-  background-color: #fffbe6;
+  background-color: #f4f5e9;
 }
 
 ul {
@@ -15,28 +15,25 @@ li {
   white-space: pre;
   padding: 0.2rem 0.4rem;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.25s;
 }
 
-.content-list li:hover {
-  background-color: #f7f3df;
+.inactive-pref:hover {
+  background-color: #dbd6cd;
 }
 
 .active-pref {
-  background-color: #ebebcf;
-}
-
-.active-pref:hover {
-  background-color: #ebebcf;
+  background-color: #c4dee3;
 }
 
 .nav-arrow {
   cursor: pointer;
   padding-bottom: 0.2rem;
+  transition: 0.25s;
 }
 
 .nav-arrow:hover {
-  background-color: #f7f3df;
+  background-color: #e3e2d7;
 }
 
 /* The styling below is used to view and collapse the preferences box */
