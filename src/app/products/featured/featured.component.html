@@ -4,11 +4,15 @@
 </div>
 <div class="container-fluid container-products">
   <div class="row justify-content-sm-center">
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1 d-flex align-items-center">
+      <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftPopular()" *ngIf="currPopularPage > 0">
+        <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
+      </div>
+    </div>
     <div class="col-sm">
       <div class="container">
         <div class="row row-cols-4 row-products">
-          <div class="col mb-3" *ngFor="let product of products">
+          <div class="col mb-3" *ngFor="let product of popularProducts">
             <app-product
               [name]="product.name"
               [source]="product.source"
@@ -20,7 +24,14 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1 d-flex align-items-center">
+      <div
+        class="rounded-right py-sm-3 nav-arrow"
+        (click)="onSlideRightPopular()"
+        *ngIf="currPopularPage * productsPerPage + productsPerPage < maxPopularProducts">
+        <img src="./assets/images/right-arrow.svg" alt="right arrow" height="50">
+      </div>
+    </div>
   </div>
 </div>
 <div class="container container-title">
@@ -28,11 +39,15 @@
 </div>
 <div class="container-fluid container-products">
   <div class="row justify-content-sm-center">
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1 d-flex align-items-center">
+      <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftNewest()" *ngIf="currNewestPage > 0">
+        <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
+      </div>
+    </div>
     <div class="col-sm">
       <div class="container">
         <div class="row row-cols-4 row-products">
-          <div class="col mb-3" *ngFor="let product of products">
+          <div class="col mb-3" *ngFor="let product of newestProducts">
             <app-product
               [name]="product.name"
               [source]="product.source"
@@ -44,6 +59,13 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-1"></div>
+    <div class="col-sm-1 d-flex align-items-center">
+      <div
+        class="rounded-right py-sm-3 nav-arrow"
+        (click)="onSlideRightNewest()"
+        *ngIf="currNewestPage * productsPerPage + productsPerPage < maxNewestProducts">
+        <img src="./assets/images/right-arrow.svg" alt="right arrow" height="50">
+      </div>
+    </div>
   </div>
 </div>
