@@ -7,35 +7,14 @@
   </div>
   <div class="container rounded container-products">
     <div class="row row-cols-4 row-products">
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
+      <div class="col mb-3" *ngFor="let product of products">
+        <app-product
+          [name]="product.name"
+          [source]="product.source"
+          [link]="product.link"
+          [imagePath]="product.imagePath"
+          [price]="product.price">
+        </app-product>
       </div>
     </div>
   </div>
@@ -46,35 +25,14 @@
   </div>
   <div class="container rounded container-products">
     <div class="row row-cols-4 row-products">
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
-      </div>
-      <div class="col mb-3">
-        <app-product></app-product>
+      <div class="col mb-3" *ngFor="let product of products">
+        <app-product
+          [name]="product.name"
+          [source]="product.source"
+          [link]="product.link"
+          [imagePath]="product.imagePath"
+          [price]="product.price">
+        </app-product>
       </div>
     </div>
   </div>
