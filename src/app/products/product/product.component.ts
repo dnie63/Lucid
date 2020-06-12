@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
-  imagePath = "./assets/tempbackendimgs/puppy.jpg";
   name = "Cream Hoodie";
   source = "Abercrombie"
-  price = 17.99;
   link = "https://www.abercrombie.com/shop/us/p/essential-hoodie-41085822?categoryId=12351&seq=01&faceout=prod1";
+  imagePath = "./assets/tempbackendimgs/puppy.jpg";
+  price = 17.99;
 
 }
