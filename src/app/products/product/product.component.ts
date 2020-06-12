@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
-  imagePath = "./assets/images/puppy.jpg";
+  imagePath = "./assets/tempbackendimgs/puppy.jpg";
   name = "Cream Hoodie";
   source = "Abercrombie"
   price = 17.99;
