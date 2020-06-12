@@ -1,39 +1,49 @@
 <app-featured-preferences></app-featured-preferences>
-<div class="container outer-container">
-  <div class="row">
+<div class="container container-title">
+  <h5 class="text-center">Most Popular</h5>
+</div>
+<div class="container-fluid container-products">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-1"></div>
     <div class="col-sm">
-      <h5 class="text-center">Most Popular</h5>
-    </div>
-  </div>
-  <div class="container rounded container-products">
-    <div class="row row-cols-4 row-products">
-      <div class="col mb-3" *ngFor="let product of products">
-        <app-product
-          [name]="product.name"
-          [source]="product.source"
-          [link]="product.link"
-          [imagePath]="product.imagePath"
-          [price]="product.price">
-        </app-product>
+      <div class="container">
+        <div class="row row-cols-4 row-products">
+          <div class="col mb-3" *ngFor="let product of products">
+            <app-product
+              [name]="product.name"
+              [source]="product.source"
+              [link]="product.link"
+              [imagePath]="product.imagePath"
+              [price]="product.price">
+            </app-product>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="col-sm-1"></div>
   </div>
-  <div class="row">
+</div>
+<div class="container container-title">
+  <h5 class="text-center">Newest Arrivals</h5>
+</div>
+<div class="container-fluid container-products">
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-1"></div>
     <div class="col-sm">
-      <h5 class="text-center">Newest Arrivals</h5>
-    </div>
-  </div>
-  <div class="container rounded container-products">
-    <div class="row row-cols-4 row-products">
-      <div class="col mb-3" *ngFor="let product of products">
-        <app-product
-          [name]="product.name"
-          [source]="product.source"
-          [link]="product.link"
-          [imagePath]="product.imagePath"
-          [price]="product.price">
-        </app-product>
+      <div class="container">
+        <div class="row row-cols-4 row-products">
+          <div class="col mb-3" *ngFor="let product of products">
+            <app-product
+              [name]="product.name"
+              [source]="product.source"
+              [link]="product.link"
+              [imagePath]="product.imagePath"
+              [price]="product.price">
+            </app-product>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
