@@ -1,0 +1,16 @@
+ul {
+  list-style-type: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+li {
+  padding-bottom: 0.4rem;
+}
+
+.container-fluid {
+  padding-top: 1.25rem;
+  background-color: #d3d3d3;
+}
