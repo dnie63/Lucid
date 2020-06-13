@@ -3,7 +3,7 @@
 }
 
 .container-products {
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .row-products {
@@ -17,4 +17,30 @@ h5 {
 .nav-arrow:hover {
   cursor: pointer;
   background-color: #f7f3df;
+}
+
+.shorten-container {
+  height: 22rem;
+  transition: height 0.75s;
+}
+
+.widen-container {
+  height: 42rem;
+  transition: height 0.75s;
+}
+
+.pagination {
+  background-color: #f0f0f0;
+}
+
+.page-number {
+  cursor: pointer;
+}
+
+.inactive-page:hover {
+  background-color: #e0e0e0;
+}
+
+.active-page {
+  background-color: #c8c8c8;
 }

@@ -92,6 +92,201 @@ export class ProductsService {
       link: "https://angular.io/guide/workspace-config",
       imagePath: "./assets/tempbackendimgs/confetti.jpg",
       price: 10
+    },
+    {
+      name: "prod-13",
+      source: "source-9",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/marbles.jpg",
+      price: 10
+    },
+    {
+      name: "prod-14",
+      source: "source-10",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/passion.jpg",
+      price: 10
+    },
+    {
+      name: "prod-15",
+      source: "source-11",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pencils.jpg",
+      price: 10
+    },
+    {
+      name: "prod-16",
+      source: "source-12",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pineapple.jpg",
+      price: 10
+    },
+    {
+      name: "prod-17",
+      source: "source-9",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pink-mouth.jpg",
+      price: 10
+    },
+    {
+      name: "prod-18",
+      source: "source-10",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/plane-forest.jpg",
+      price: 10
+    },
+    {
+      name: "prod-19",
+      source: "source-11",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pool-floatie.jpg",
+      price: 10
+    },
+    {
+      name: "prod-20",
+      source: "source-12",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/punch.jpg",
+      price: 10
+    },{
+      name: "prod-21",
+      source: "source-1",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/arrow.jpg",
+      price: 10
+    },
+    {
+      name: "prod-22",
+      source: "source-2",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/balloon-chair.jpg",
+      price: 10
+    },
+    {
+      name: "prod-23",
+      source: "source-3",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/beach-chair.jpg",
+      price: 10
+    },
+    {
+      name: "prod-24",
+      source: "source-4",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/beach-sunset.jpg",
+      price: 10
+    },
+    {
+      name: "prod-25",
+      source: "source-5",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/blue-orange.jpg",
+      price: 10
+    },
+    {
+      name: "prod-26",
+      source: "source-6",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/blue-wall.jpg",
+      price: 10
+    },
+    {
+      name: "prod-27",
+      source: "source-7",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/books.jpg",
+      price: 10
+    },
+    {
+      name: "prod-28",
+      source: "source-8",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/city.jpg",
+      price: 10
+    },
+    {
+      name: "prod-29",
+      source: "source-9",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/clovers.jpg",
+      price: 10
+    },
+    {
+      name: "prod-30",
+      source: "source-10",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/coffee-cup.jpg",
+      price: 10
+    },
+    {
+      name: "prod-31",
+      source: "source-11",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/colored-tiles.jpg",
+      price: 10
+    },
+    {
+      name: "prod-32",
+      source: "source-12",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/confetti.jpg",
+      price: 10
+    },
+    {
+      name: "prod-33",
+      source: "source-9",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/marbles.jpg",
+      price: 10
+    },
+    {
+      name: "prod-34",
+      source: "source-10",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/passion.jpg",
+      price: 10
+    },
+    {
+      name: "prod-35",
+      source: "source-11",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pencils.jpg",
+      price: 10
+    },
+    {
+      name: "prod-36",
+      source: "source-12",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pineapple.jpg",
+      price: 10
+    },
+    {
+      name: "prod-37",
+      source: "source-9",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pink-mouth.jpg",
+      price: 10
+    },
+    {
+      name: "prod-38",
+      source: "source-10",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/plane-forest.jpg",
+      price: 10
+    },
+    {
+      name: "prod-39",
+      source: "source-11",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/pool-floatie.jpg",
+      price: 10
+    },
+    {
+      name: "prod-40",
+      source: "source-12",
+      link: "https://angular.io/guide/workspace-config",
+      imagePath: "./assets/tempbackendimgs/punch.jpg",
+      price: 10
     }
   ]
 

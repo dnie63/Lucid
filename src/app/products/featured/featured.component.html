@@ -2,7 +2,7 @@
 <div class="container container-title">
   <h4 class="text-center">Most Popular</h4>
 </div>
-<div class="container-fluid container-products">
+<div class="container-fluid container-products" [class]="{'shorten-container': popularShortSupply, 'widen-container': !popularShortSupply}">
   <div class="row justify-content-sm-center">
     <div class="col-sm-1 d-flex align-items-center">
       <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftPopular()" *ngIf="currPopularPage > 0">
@@ -11,7 +11,7 @@
     </div>
     <div class="col-sm">
       <div class="container">
-        <div class="row row-cols-4 row-products">
+        <div class="row row-cols-{{productsPerRow}} row-products">
           <div class="col mb-3" *ngFor="let product of popularProducts">
             <app-product
               [name]="product.name"
@@ -33,11 +33,24 @@
       </div>
     </div>
   </div>
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-3 px-0 pagination rounded">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm text-center font-weight-bold py-2 rounded-left page-number active-page">1</div>
+          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">2</div>
+          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">3</div>
+          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">4</div>
+          <div class="col-sm text-center font-weight-bold py-2 rounded-right page-number inactive-page">5</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="container container-title">
   <h4 class="text-center">Newest Arrivals</h4>
 </div>
-<div class="container-fluid container-products">
+<div class="container-fluid container-products" [class]="{'shorten-container': newestShortSupply, 'widen-container': !newestShortSupply}">
   <div class="row justify-content-sm-center">
     <div class="col-sm-1 d-flex align-items-center">
       <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftNewest()" *ngIf="currNewestPage > 0">
@@ -46,7 +59,7 @@
     </div>
     <div class="col-sm">
       <div class="container">
-        <div class="row row-cols-4 row-products">
+        <div class="row row-cols-{{productsPerRow}} row-products">
           <div class="col mb-3" *ngFor="let product of newestProducts">
             <app-product
               [name]="product.name"
@@ -65,6 +78,19 @@
         (click)="onSlideRightNewest()"
         *ngIf="currNewestPage * productsPerPage + productsPerPage < maxNewestProducts">
         <img src="./assets/images/right-arrow.svg" alt="right arrow" height="50">
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-sm-center">
+    <div class="col-sm-3 px-0 pagination rounded">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm text-center font-weight-bold py-2 rounded-left page-number active-page">1</div>
+          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">2</div>
+          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">3</div>
+          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">4</div>
+          <div class="col-sm text-center font-weight-bold py-2 rounded-right page-number inactive-page">5</div>
+        </div>
       </div>
     </div>
   </div>
