@@ -377,8 +377,8 @@ export class ProductsService {
     }
   ]
 
-  private popularProductsUpdate = new Subject<{ popularProducts: Product[] }>();
-  private newestProductsUpdate = new Subject<{ newestProducts: Product[] }>();
+  private popularProductsUpdate = new Subject<{ prev: Product[], curr: Product[], next: Product[] }>();
+  private newestProductsUpdate = new Subject<{ prev: Product[], curr: Product[], next: Product[] }>();
 
   getPopularProductsUpdateListener() {
     return this.popularProductsUpdate.asObservable();
@@ -390,13 +390,17 @@ export class ProductsService {
 
   getPopularProducts(currPage: number, productsPerPage: number) {
     this.popularProductsUpdate.next({
-      popularProducts: this.dummyPopularProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage)
+      prev: this.dummyPopularProducts.slice((currPage - 1) * productsPerPage, (currPage - 1) * productsPerPage + productsPerPage),
+      curr: this.dummyPopularProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage),
+      next: this.dummyPopularProducts.slice((currPage + 1) * productsPerPage, (currPage + 1) * productsPerPage + productsPerPage)
     });
   }
 
   getNewestProducts(currPage: number, productsPerPage: number) {
     this.newestProductsUpdate.next({
-      newestProducts: this.dummyNewestProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage)
+      prev: this.dummyNewestProducts.slice((currPage - 1) * productsPerPage, (currPage - 1) * productsPerPage + productsPerPage),
+      curr: this.dummyNewestProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage),
+      next: this.dummyNewestProducts.slice((currPage + 1) * productsPerPage, (currPage + 1) * productsPerPage + productsPerPage)
     });
   }
 
