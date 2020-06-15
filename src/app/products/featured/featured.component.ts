@@ -154,4 +154,40 @@ export class FeaturedComponent implements OnInit {
     }
   }
 
+  onClickPageNewest(newPage: number) {
+    if (newPage == this.currNewestPage) {
+      return;
+    } else {
+      this.newestSlideRight = newPage > this.currNewestPage;
+      setTimeout(() => {
+        this.currNewestPage = newPage;
+        this.adjustPaginationNewest(newPage + 1);
+        this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
+      }, 10);
+    }
+  }
+
+  private adjustPaginationNewest(newPage: number) {
+    let mid = Math.floor(this.maxPages / 2);
+    let index = this.newestPageNumbers.indexOf(newPage);
+    if (index == mid) {
+      return;
+    } else {
+      let lowerBound = Math.max(1, this.newestPageNumbers[0] - (mid - index));
+      let upperBound = Math.min(Math.ceil(this.maxNewestProducts / this.productsPerPage),
+        this.newestPageNumbers[this.newestPageNumbers.length - 1] - (mid - index));
+      let lowerDiff = lowerBound - this.newestPageNumbers[0];
+      let upperDiff = upperBound - this.newestPageNumbers[this.newestPageNumbers.length - 1];
+      let diff;
+      if (Math.abs(lowerDiff) < Math.abs(upperDiff)) {
+        diff = lowerDiff;
+      } else {
+        diff = upperDiff;
+      }
+      for (let i = 0; i < this.newestPageNumbers.length; i++) {
+        this.newestPageNumbers[i] += diff;
+      }
+    }
+  }
+
 }

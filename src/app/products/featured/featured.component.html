@@ -102,11 +102,12 @@
     <div class="col-sm-3 px-0 rounded pagination">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm text-center font-weight-bold py-2 rounded-left page-number active-page">1</div>
-          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">2</div>
-          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">3</div>
-          <div class="col-sm text-center font-weight-bold py-2 page-number inactive-page">4</div>
-          <div class="col-sm text-center font-weight-bold py-2 rounded-right page-number inactive-page">5</div>
+          <div
+            class="col-sm text-center font-weight-bold py-2 page-number"
+            *ngFor="let page of newestPageNumbers"
+            [class]="{'active-page': page == currNewestPage + 1,
+              'inactive-page': page != currNewestPage + 1}"
+            (click)="onClickPageNewest(page - 1)">{{page}}</div>
         </div>
       </div>
     </div>
