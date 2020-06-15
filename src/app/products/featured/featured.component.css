@@ -4,6 +4,9 @@
 
 .container-products {
   margin-bottom: 6rem;
+}
+
+.overflow-container {
   overflow: hidden;
 }
 

@@ -3,7 +3,7 @@
   <h4 class="text-center">Most Popular</h4>
 </div>
 <div class="container-fluid container-products" [class]="{'shorten-container': popularShortSupply, 'widen-container': !popularShortSupply}">
-  <div class="row justify-content-sm-center">
+  <div class="row justify-content-sm-center overflow-container">
     <div class="col-sm-1 d-flex align-items-center">
       <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftPopular()" *ngIf="currPopularPage > 0">
         <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
