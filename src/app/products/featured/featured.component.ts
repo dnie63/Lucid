@@ -50,11 +50,22 @@ export class FeaturedComponent implements OnInit {
   popularShortSupply: boolean;
   newestShortSupply: boolean;
 
+  popularPageNumbers: number[];
+  newestPageNumbers: number[];
+
   constructor(public productsService: ProductsService) {}
 
   ngOnInit() {
     this.maxPopularProducts = this.productsService.getMaxPopularProducts();
     this.maxNewestProducts = this.productsService.getMaxNewestProducts();
+    this.popularPageNumbers = [];
+    this.newestPageNumbers = [];
+    for (let i = 0; i < this.maxPopularProducts / this.productsPerPage; i++) {
+      this.popularPageNumbers[i] = i + 1;
+    }
+    for (let i = 0; i < this.maxNewestProducts / this.productsPerPage; i++) {
+      this.newestPageNumbers[i] = i + 1;
+    }
 
     this.popularProductsSub = this.productsService.getPopularProductsUpdateListener()
       .subscribe((products: { currProducts: Product[] }) => {
@@ -104,6 +115,18 @@ export class FeaturedComponent implements OnInit {
       this.currNewestPage += 1;
       this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
     }, 10);
+  }
+
+  onClickPagePopular(newPage: number) {
+    if (newPage == this.currPopularPage) {
+      return;
+    } else {
+      this.popularSlideRight = newPage > this.currPopularPage;
+      setTimeout(() => {
+        this.currPopularPage = newPage;
+        this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
+      }, 10);
+    }
   }
 
 }
