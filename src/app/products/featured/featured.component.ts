@@ -90,6 +90,7 @@ export class FeaturedComponent implements OnInit {
     this.popularSlideRight = false;
     setTimeout(() => {
       this.currPopularPage -= 1;
+      this.adjustPaginationPopular(this.currPopularPage + 1);
       this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
     }, 10);
   }
@@ -98,6 +99,7 @@ export class FeaturedComponent implements OnInit {
     this.popularSlideRight = true;
     setTimeout(() => {
       this.currPopularPage += 1;
+      this.adjustPaginationPopular(this.currPopularPage + 1);
       this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
     }, 10);
   }
@@ -106,6 +108,7 @@ export class FeaturedComponent implements OnInit {
     this.newestSlideRight = false;
     setTimeout(() => {
       this.currNewestPage -= 1;
+      this.adjustPaginationNewest(this.currNewestPage + 1);
       this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
     }, 10);
   }
@@ -114,6 +117,7 @@ export class FeaturedComponent implements OnInit {
     this.newestSlideRight = true;
     setTimeout(() => {
       this.currNewestPage += 1;
+      this.adjustPaginationNewest(this.currNewestPage + 1);
       this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
     }, 10);
   }
