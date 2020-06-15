@@ -91,15 +91,19 @@ export class FeaturedComponent implements OnInit {
   }
 
   onSlideLeftNewest() {
-    // this.currNewestPage -= 1;
-    // this.newestSlidingLeft = true;
-    // this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
+    this.newestSlideRight = false;
+    setTimeout(() => {
+      this.currNewestPage -= 1;
+      this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
+    }, 10);
   }
 
   onSlideRightNewest() {
-    // this.currNewestPage += 1;
-    // this.newestSlidingRight = true;
-    // this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
+    this.newestSlideRight = true;
+    setTimeout(() => {
+      this.currNewestPage += 1;
+      this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
+    }, 10);
   }
 
 }

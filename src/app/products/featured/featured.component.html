@@ -58,17 +58,25 @@
 <div class="container container-title">
   <h4 class="text-center">Newest Arrivals</h4>
 </div>
-<div class="container-fluid container-products" [class]="{'shorten-container': newestShortSupply, 'widen-container': !newestShortSupply}">
-  <div class="row justify-content-sm-center">
+<div class="container-fluid container-products">
+  <div
+    class="row justify-content-sm-center overflow-container"
+    [class]="{'shorten-container': newestShortSupply, 'widen-container': !newestShortSupply}">
     <div class="col-sm-1 d-flex align-items-center">
-      <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftNewest()" *ngIf="currNewestPage > 0">
+      <div
+        class="rounded-left py-sm-3 nav-arrow"
+        (click)="onSlideLeftNewest()"
+        *ngIf="currNewestPage > 0">
         <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
       </div>
     </div>
     <div class="col-sm">
-      <div class="container">
+      <div
+        class="container slide-container"
+        *ngFor="let batch of newestProducts"
+        [@slideInOut]="newestSlideRight ? 'right' : 'left'">
         <div class="row row-cols-{{productsPerRow}} row-products">
-          <div class="col mb-3" *ngFor="let product of currNewestProducts">
+          <div class="col mb-3" *ngFor="let product of batch">
             <app-product
               [name]="product.name"
               [source]="product.source"
@@ -90,7 +98,7 @@
     </div>
   </div>
   <div class="row justify-content-sm-center">
-    <div class="col-sm-3 px-0 pagination rounded">
+    <div class="col-sm-3 px-0 rounded pagination">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm text-center font-weight-bold py-2 rounded-left page-number active-page">1</div>
