@@ -9,28 +9,28 @@ import { Product } from '../product.model';
   selector: 'app-featured',
   animations: [
     trigger('slidePrev', [
-      state('left', style({ transform: 'translateX(-110%)' })),
+      state('left', style({ transform: 'translateX(-120%)' })),
       state('middle', style({ transform: 'translateX(0)' })),
       transition('left => middle', [
-        animate('0.6s ease-out')
+        animate('0.5s ease-out')
       ])
     ]),
     trigger('slideCurr', [
-      state('left', style({ transform: 'translateX(-110%)' })),
+      state('left', style({ transform: 'translateX(-120%)' })),
       state('middle', style({ transform: 'translateX(0)' })),
-      state('right', style({ transform: 'translateX(110%)' })),
+      state('right', style({ transform: 'translateX(120%)' })),
       transition('middle => left', [
-        animate('0.6s ease-out')
+        animate('0.5s ease-out')
       ]),
       transition('middle => right', [
-        animate('0.6s ease-out')
+        animate('0.5s ease-out')
       ])
     ]),
     trigger('slideNext', [
       state('middle', style({ transform: 'translateX(0)' })),
-      state('right', style({ transform: 'translateX(110%)' })),
+      state('right', style({ transform: 'translateX(120%)' })),
       transition('right => middle', [
-        animate('0.6s ease-out')
+        animate('0.5s ease-out')
       ])
     ]),
   ],
@@ -103,7 +103,7 @@ export class FeaturedComponent implements OnInit {
       this.popularSlideLeft = false;
       this.currPopularPage -= 1;
       this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
-    }, 600);
+    }, 500);
   }
 
   onSlideRightPopular() {
@@ -116,7 +116,7 @@ export class FeaturedComponent implements OnInit {
       this.popularSlideRight = false;
       this.currPopularPage += 1;
       this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
-    }, 600);
+    }, 500);
   }
 
   onSlideLeftNewest() {
