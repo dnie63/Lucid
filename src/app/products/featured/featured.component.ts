@@ -50,6 +50,7 @@ export class FeaturedComponent implements OnInit {
   popularShortSupply: boolean;
   newestShortSupply: boolean;
 
+  maxPages = 5;
   popularPageNumbers: number[];
   newestPageNumbers: number[];
 
@@ -60,10 +61,10 @@ export class FeaturedComponent implements OnInit {
     this.maxNewestProducts = this.productsService.getMaxNewestProducts();
     this.popularPageNumbers = [];
     this.newestPageNumbers = [];
-    for (let i = 0; i < this.maxPopularProducts / this.productsPerPage; i++) {
+    for (let i = 0; i < Math.min(this.maxPages, this.maxPopularProducts / this.productsPerPage); i++) {
       this.popularPageNumbers[i] = i + 1;
     }
-    for (let i = 0; i < this.maxNewestProducts / this.productsPerPage; i++) {
+    for (let i = 0; i < Math.min(this.maxPages, this.maxNewestProducts / this.productsPerPage); i++) {
       this.newestPageNumbers[i] = i + 1;
     }
 
@@ -124,8 +125,32 @@ export class FeaturedComponent implements OnInit {
       this.popularSlideRight = newPage > this.currPopularPage;
       setTimeout(() => {
         this.currPopularPage = newPage;
+        this.adjustPaginationPopular(newPage + 1);
         this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
       }, 10);
+    }
+  }
+
+  private adjustPaginationPopular(newPage: number) {
+    let mid = Math.floor(this.maxPages / 2);
+    let index = this.popularPageNumbers.indexOf(newPage);
+    if (index == mid) {
+      return;
+    } else {
+      let lowerBound = Math.max(1, this.popularPageNumbers[0] - (mid - index));
+      let upperBound = Math.min(Math.ceil(this.maxPopularProducts / this.productsPerPage),
+        this.popularPageNumbers[this.popularPageNumbers.length - 1] - (mid - index));
+      let lowerDiff = lowerBound - this.popularPageNumbers[0];
+      let upperDiff = upperBound - this.popularPageNumbers[this.popularPageNumbers.length - 1];
+      let diff;
+      if (Math.abs(lowerDiff) < Math.abs(upperDiff)) {
+        diff = lowerDiff;
+      } else {
+        diff = upperDiff;
+      }
+      for (let i = 0; i < this.popularPageNumbers.length; i++) {
+        this.popularPageNumbers[i] += diff;
+      }
     }
   }
 
