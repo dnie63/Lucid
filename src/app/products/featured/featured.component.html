@@ -2,43 +2,25 @@
 <div class="container container-title">
   <h4 class="text-center">Most Popular</h4>
 </div>
-<div class="container-fluid container-products" [class]="{'shorten-container': popularShortSupply, 'widen-container': !popularShortSupply}">
-  <div class="row justify-content-sm-center overflow-container">
+<div class="container-fluid container-products">
+  <div
+    class="row justify-content-sm-center overflow-container"
+    [class]="{'shorten-container': popularShortSupply, 'widen-container': !popularShortSupply}">
     <div class="col-sm-1 d-flex align-items-center">
-      <div class="rounded-left py-sm-3 nav-arrow" (click)="onSlideLeftPopular()" *ngIf="currPopularPage > 0">
+      <div
+        class="rounded-left py-sm-3 nav-arrow"
+        (click)="onSlideLeftPopular()"
+        *ngIf="currPopularPage > 0">
         <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
       </div>
     </div>
     <div class="col-sm">
-      <div class="container slide-container" [@slidePrev]="popularSlideLeft ? 'middle' : 'left'">
+      <div
+        class="container slide-container"
+        *ngFor="let batch of popularProducts"
+        [@slideInOut]="popularSlideRight ? 'right' : 'left'">
         <div class="row row-cols-{{productsPerRow}} row-products">
-          <div class="col mb-3" *ngFor="let product of prevPopularProducts">
-            <app-product
-              [name]="product.name"
-              [source]="product.source"
-              [link]="product.link"
-              [imagePath]="product.imagePath"
-              [price]="product.price">
-            </app-product>
-          </div>
-        </div>
-      </div>
-      <div class="container slide-container" [@slideNext]="popularSlideRight ? 'middle' : 'right'">
-        <div class="row row-cols-{{productsPerRow}} row-products">
-          <div class="col mb-3" *ngFor="let product of nextPopularProducts">
-            <app-product
-              [name]="product.name"
-              [source]="product.source"
-              [link]="product.link"
-              [imagePath]="product.imagePath"
-              [price]="product.price">
-            </app-product>
-          </div>
-        </div>
-      </div>
-      <div class="container curr-container" [@slideCurr]="currMoving ? (currMoveRight ? 'right' : 'left') : 'middle'">
-        <div class="row row-cols-{{productsPerRow}} row-products">
-          <div class="col mb-3" *ngFor="let product of currPopularProducts">
+          <div class="col mb-3" *ngFor="let product of batch">
             <app-product
               [name]="product.name"
               [source]="product.source"
@@ -60,7 +42,7 @@
     </div>
   </div>
   <div class="row justify-content-sm-center">
-    <div class="col-sm-3 px-0 pagination rounded">
+    <div class="col-sm-3 px-0 rounded pagination">
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm text-center font-weight-bold py-2 rounded-left page-number active-page">1</div>

@@ -259,34 +259,6 @@ export class ProductsService {
       link: "https://angular.io/guide/workspace-config",
       imagePath: "./assets/tempbackendimgs/pineapple.jpg",
       price: 10
-    },
-    {
-      name: "prod-37",
-      source: "source-9",
-      link: "https://angular.io/guide/workspace-config",
-      imagePath: "./assets/tempbackendimgs/pink-mouth.jpg",
-      price: 10
-    },
-    {
-      name: "prod-38",
-      source: "source-10",
-      link: "https://angular.io/guide/workspace-config",
-      imagePath: "./assets/tempbackendimgs/plane-forest.jpg",
-      price: 10
-    },
-    {
-      name: "prod-39",
-      source: "source-11",
-      link: "https://angular.io/guide/workspace-config",
-      imagePath: "./assets/tempbackendimgs/pool-floatie.jpg",
-      price: 10
-    },
-    {
-      name: "prod-40",
-      source: "source-12",
-      link: "https://angular.io/guide/workspace-config",
-      imagePath: "./assets/tempbackendimgs/punch.jpg",
-      price: 10
     }
   ]
 
@@ -377,8 +349,8 @@ export class ProductsService {
     }
   ]
 
-  private popularProductsUpdate = new Subject<{ prev: Product[], curr: Product[], next: Product[] }>();
-  private newestProductsUpdate = new Subject<{ prev: Product[], curr: Product[], next: Product[] }>();
+  private popularProductsUpdate = new Subject<{ currProducts: Product[] }>();
+  private newestProductsUpdate = new Subject<{ currProducts: Product[] }>();
 
   getPopularProductsUpdateListener() {
     return this.popularProductsUpdate.asObservable();
@@ -390,17 +362,13 @@ export class ProductsService {
 
   getPopularProducts(currPage: number, productsPerPage: number) {
     this.popularProductsUpdate.next({
-      prev: this.dummyPopularProducts.slice((currPage - 1) * productsPerPage, (currPage - 1) * productsPerPage + productsPerPage),
-      curr: this.dummyPopularProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage),
-      next: this.dummyPopularProducts.slice((currPage + 1) * productsPerPage, (currPage + 1) * productsPerPage + productsPerPage)
+      currProducts: this.dummyPopularProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage),
     });
   }
 
   getNewestProducts(currPage: number, productsPerPage: number) {
     this.newestProductsUpdate.next({
-      prev: this.dummyNewestProducts.slice((currPage - 1) * productsPerPage, (currPage - 1) * productsPerPage + productsPerPage),
-      curr: this.dummyNewestProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage),
-      next: this.dummyNewestProducts.slice((currPage + 1) * productsPerPage, (currPage + 1) * productsPerPage + productsPerPage)
+      currProducts: this.dummyNewestProducts.slice(currPage * productsPerPage, currPage * productsPerPage + productsPerPage),
     });
   }
 

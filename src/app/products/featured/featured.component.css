@@ -10,16 +10,22 @@
   overflow: hidden;
 }
 
-.row-products {
-  padding-top: 1rem;
+.shorten-container {
+  height: 22rem;
+  transition: height 0.75s ease-out;
+}
+
+.widen-container {
+  height: 42rem;
+  transition: height 0.75s ease-out;
 }
 
 .slide-container {
   position: absolute;
 }
 
-.curr-container {
-  position: relative;
+.row-products {
+  padding-top: 1rem;
 }
 
 h5 {
@@ -29,16 +35,6 @@ h5 {
 .nav-arrow:hover {
   cursor: pointer;
   background-color: #f7f3df;
-}
-
-.shorten-container {
-  height: 22rem;
-  transition: height 0.75s;
-}
-
-.widen-container {
-  height: 42rem;
-  transition: height 0.75s;
 }
 
 .pagination {
