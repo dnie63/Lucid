@@ -86,38 +86,20 @@ export class FeaturedComponent implements OnInit {
     this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
   }
 
-  onSlideLeftPopular() {
-    this.popularSlideRight = false;
+  onSlidePopular(slideRight: boolean, diff: number) {
+    this.popularSlideRight = slideRight;
     setTimeout(() => {
-      this.currPopularPage -= 1;
-      this.adjustPaginationPopular(this.currPopularPage + 1);
+      this.currPopularPage += diff;
+      this.adjustPagination(this.currPopularPage + 1, this.popularPageNumbers, this.maxPopularProducts);
       this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
     }, 10);
   }
 
-  onSlideRightPopular() {
-    this.popularSlideRight = true;
+  onSlideNewest(slideRight: boolean, diff: number) {
+    this.newestSlideRight = slideRight;
     setTimeout(() => {
-      this.currPopularPage += 1;
-      this.adjustPaginationPopular(this.currPopularPage + 1);
-      this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
-    }, 10);
-  }
-
-  onSlideLeftNewest() {
-    this.newestSlideRight = false;
-    setTimeout(() => {
-      this.currNewestPage -= 1;
-      this.adjustPaginationNewest(this.currNewestPage + 1);
-      this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
-    }, 10);
-  }
-
-  onSlideRightNewest() {
-    this.newestSlideRight = true;
-    setTimeout(() => {
-      this.currNewestPage += 1;
-      this.adjustPaginationNewest(this.currNewestPage + 1);
+      this.currNewestPage += diff;
+      this.adjustPagination(this.currNewestPage + 1, this.newestPageNumbers, this.maxNewestProducts);
       this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
     }, 10);
   }
@@ -129,32 +111,9 @@ export class FeaturedComponent implements OnInit {
       this.popularSlideRight = newPage > this.currPopularPage;
       setTimeout(() => {
         this.currPopularPage = newPage;
-        this.adjustPaginationPopular(newPage + 1);
+        this.adjustPagination(newPage + 1, this.popularPageNumbers, this.maxPopularProducts);
         this.productsService.getPopularProducts(this.currPopularPage, this.productsPerPage);
       }, 10);
-    }
-  }
-
-  private adjustPaginationPopular(newPage: number) {
-    let mid = Math.floor(this.maxPages / 2);
-    let index = this.popularPageNumbers.indexOf(newPage);
-    if (index == mid) {
-      return;
-    } else {
-      let lowerBound = Math.max(1, this.popularPageNumbers[0] - (mid - index));
-      let upperBound = Math.min(Math.ceil(this.maxPopularProducts / this.productsPerPage),
-        this.popularPageNumbers[this.popularPageNumbers.length - 1] - (mid - index));
-      let lowerDiff = lowerBound - this.popularPageNumbers[0];
-      let upperDiff = upperBound - this.popularPageNumbers[this.popularPageNumbers.length - 1];
-      let diff;
-      if (Math.abs(lowerDiff) < Math.abs(upperDiff)) {
-        diff = lowerDiff;
-      } else {
-        diff = upperDiff;
-      }
-      for (let i = 0; i < this.popularPageNumbers.length; i++) {
-        this.popularPageNumbers[i] += diff;
-      }
     }
   }
 
@@ -165,31 +124,31 @@ export class FeaturedComponent implements OnInit {
       this.newestSlideRight = newPage > this.currNewestPage;
       setTimeout(() => {
         this.currNewestPage = newPage;
-        this.adjustPaginationNewest(newPage + 1);
+        this.adjustPagination(newPage + 1, this.newestPageNumbers, this.maxNewestProducts);
         this.productsService.getNewestProducts(this.currNewestPage, this.productsPerPage);
       }, 10);
     }
   }
 
-  private adjustPaginationNewest(newPage: number) {
+  private adjustPagination(newPage: number, pageNumbers: number[], maxProducts: number) {
     let mid = Math.floor(this.maxPages / 2);
-    let index = this.newestPageNumbers.indexOf(newPage);
+    let index = pageNumbers.indexOf(newPage);
     if (index == mid) {
       return;
     } else {
-      let lowerBound = Math.max(1, this.newestPageNumbers[0] - (mid - index));
-      let upperBound = Math.min(Math.ceil(this.maxNewestProducts / this.productsPerPage),
-        this.newestPageNumbers[this.newestPageNumbers.length - 1] - (mid - index));
-      let lowerDiff = lowerBound - this.newestPageNumbers[0];
-      let upperDiff = upperBound - this.newestPageNumbers[this.newestPageNumbers.length - 1];
+      let lowerBound = Math.max(1, pageNumbers[0] - (mid - index));
+      let upperBound = Math.min(Math.ceil(maxProducts / this.productsPerPage),
+        pageNumbers[pageNumbers.length - 1] - (mid - index));
+      let lowerDiff = lowerBound - pageNumbers[0];
+      let upperDiff = upperBound - pageNumbers[pageNumbers.length - 1];
       let diff;
       if (Math.abs(lowerDiff) < Math.abs(upperDiff)) {
         diff = lowerDiff;
       } else {
         diff = upperDiff;
       }
-      for (let i = 0; i < this.newestPageNumbers.length; i++) {
-        this.newestPageNumbers[i] += diff;
+      for (let i = 0; i < pageNumbers.length; i++) {
+        pageNumbers[i] += diff;
       }
     }
   }

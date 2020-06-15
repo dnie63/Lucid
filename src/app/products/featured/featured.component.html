@@ -9,7 +9,7 @@
     <div class="col-sm-1 d-flex align-items-center">
       <div
         class="rounded-left py-sm-3 nav-arrow"
-        (click)="onSlideLeftPopular()"
+        (click)="onSlidePopular(false, -1)"
         *ngIf="currPopularPage > 0">
         <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
       </div>
@@ -35,7 +35,7 @@
     <div class="col-sm-1 d-flex align-items-center">
       <div
         class="rounded-right py-sm-3 nav-arrow"
-        (click)="onSlideRightPopular()"
+        (click)="onSlidePopular(true, 1)"
         *ngIf="currPopularPage * productsPerPage + productsPerPage < maxPopularProducts">
         <img src="./assets/images/right-arrow.svg" alt="right arrow" height="50">
       </div>
@@ -66,7 +66,7 @@
     <div class="col-sm-1 d-flex align-items-center">
       <div
         class="rounded-left py-sm-3 nav-arrow"
-        (click)="onSlideLeftNewest()"
+        (click)="onSlideNewest(false, -1)"
         *ngIf="currNewestPage > 0">
         <img src="./assets/images/left-arrow.svg" alt="left arrow" height="50">
       </div>
@@ -92,7 +92,7 @@
     <div class="col-sm-1 d-flex align-items-center">
       <div
         class="rounded-right py-sm-3 nav-arrow"
-        (click)="onSlideRightNewest()"
+        (click)="onSlideNewest(true, 1)"
         *ngIf="currNewestPage * productsPerPage + productsPerPage < maxNewestProducts">
         <img src="./assets/images/right-arrow.svg" alt="right arrow" height="50">
       </div>
