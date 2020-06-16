@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container-fluid outer-container">
   <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-4">
-      <form class="rounded-pill px-sm-3 pt-sm-2 pb-sm-1 search-bar">
+      <form class="rounded-pill px-sm-3 py-sm-2 search-bar">
         <input
           type="text"
           [(ngModel)]="searchValue"
@@ -12,10 +12,37 @@
       </form>
     </div>
     <div class="col-sm-4">
-      Filters
+      Filters: Price Size Availability
     </div>
-    <div class="col-sm-3">
-      Sort By
+    <div class="col-sm-3 px-sm-0">
+      <div class="container">
+        <div class="row py-sm-2 pr-sm-3 sort-list-toggle" data-toggle="collapse" href="#sortList">
+          <div class="col-sm-auto pl-sm-3">
+            Sort By:
+          </div>
+          <div class="col-sm px-sm-0">
+            <div>{{sortValue}}</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-auto pl-sm-0 dummy-spacer">
+            Sort By:
+          </div>
+          <div class="col-sm px-sm-0 sort-list-outer-container">
+            <div class="collapse rounded-bottom sort-list-inner-container" id="sortList">
+              <ul class="px-sm-0 sort-list">
+                <li
+                  *ngFor="let sort of sorts"
+                  (click)="onClickSortItem(sort)"
+                  [class]="{'active-sort': sort == sortValue, 'inactive-sort': sort != sortValue}"
+                  class="px-sm-3 py-sm-1"
+                  data-toggle="collapse"
+                  href="#sortList">{{sort}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
