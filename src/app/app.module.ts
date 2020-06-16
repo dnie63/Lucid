@@ -9,6 +9,8 @@ import { FeaturedComponent } from './products/featured/featured.component';
 import { FeaturedPreferencesComponent } from './products/featured/preferences/preferences.component';
 import { ProductComponent } from './products/product/product.component';
 import { FooterComponent } from './footer/footer.component'
+import { PersonalizeComponent } from './products/personalize/personalize.component';
+import { PersonalizeSearchbarComponent } from './products/personalize/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FooterComponent } from './footer/footer.component'
     FeaturedComponent,
     FeaturedPreferencesComponent,
     ProductComponent,
-    FooterComponent
+    FooterComponent,
+    PersonalizeComponent,
+    PersonalizeSearchbarComponent
   ],
   imports: [
     BrowserModule,
