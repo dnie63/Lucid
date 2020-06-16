@@ -1,7 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-5">
-      Searchbar
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+      <form class="rounded-pill px-sm-3 pt-sm-2 pb-sm-1 search-bar">
+        <input
+          type="text"
+          [(ngModel)]="searchValue"
+          name="search"
+          class="search-input"
+          placeholder="Search...">
+      </form>
     </div>
     <div class="col-sm-4">
       Filters
