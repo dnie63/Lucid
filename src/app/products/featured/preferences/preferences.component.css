@@ -4,7 +4,7 @@
 
 .inner-container {
   padding-top: 0.7rem;
-  background-color: #f4f5e9;
+  background-color: #f0f0f0;
 }
 
 ul {
@@ -19,11 +19,11 @@ li {
 }
 
 .inactive-pref:hover {
-  background-color: #e3e2d7;
+  background-color: #e0e0e0;
 }
 
 .active-pref {
-  background-color: #c4dee3;
+  background-color: #d0d0d0;
 }
 
 .nav-arrow {
@@ -33,7 +33,7 @@ li {
 }
 
 .nav-arrow:hover {
-  background-color: #e3e2d7;
+  background-color: #e0e0e0;
 }
 
 /* The styling below is used to view and collapse the preferences box */

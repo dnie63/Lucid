@@ -3,13 +3,13 @@
 }
 
 a {
-  background-color: #fffbe6;
+  background-color: #f0f0f0;
   cursor: pointer;
   transition: 0.4s;
 }
 
 a:hover {
-  background-color: #f7f3df;
+  background-color: #e0e0e0;
 }
 
 span {
