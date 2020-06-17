@@ -12,34 +12,75 @@
       </form>
     </div>
     <div class="col-sm-4">
-      Filters: Price Size Availability
-    </div>
-    <div class="col-sm-3 px-sm-0">
-      <div class="container">
-        <div class="row py-sm-2 pr-sm-3 sort-list-toggle" data-toggle="collapse" href="#sortList">
-          <div class="col-sm-auto pl-sm-3">
-            Sort By:
-          </div>
-          <div class="col-sm px-sm-0">
-            <div>{{sortValue}}</div>
+      <div class="row py-sm-2 pl-sm-4">
+        <div class="col-sm-auto">
+          Filters:
+        </div>
+        <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#priceList">
+          Price
+        </div>
+        <div class="col-sm-auto filter-toggle">
+          Size
+        </div>
+        <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#availList">
+          Availability
+        </div>
+      </div>
+      <div class="row pl-sm-4">
+        <div class="col-sm-2 dummy-spacer">
+          Filters:
+        </div>
+        <div class="col-sm px-sm-0 item-list-outer-container">
+          <div class="collapse rounded-bottom item-list-inner-container" id="priceList">
+            <ul class="px-sm-0 item-list">
+              <li
+                *ngFor="let price of prices"
+                (click)="onClickPriceItem(price)"
+                [class]="{'active-item': pricesSelected.includes(price), 'inactive-item': !pricesSelected.includes(price)}"
+                class="px-sm-3 py-sm-1">{{price}}</li>
+            </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-auto pl-sm-0 dummy-spacer">
-            Sort By:
+        <div class="col-sm-auto">
+          Size
+        </div>
+        <div class="col-sm px-sm-0 item-list-outer-container">
+          <div class="collapse rounded-bottom item-list-inner-container" id="availList">
+            <ul class="px-sm-0 item-list">
+              <li
+                *ngFor="let avail of avails"
+                (click)="onClickAvailItem(avail)"
+                [class]="{'active-item': availsSelected.includes(avail), 'inactive-item': !availsSelected.includes(avail)}"
+                class="px-sm-3 py-sm-1">{{avail}}</li>
+            </ul>
           </div>
-          <div class="col-sm px-sm-0 sort-list-outer-container">
-            <div class="collapse rounded-bottom sort-list-inner-container" id="sortList">
-              <ul class="px-sm-0 sort-list">
-                <li
-                  *ngFor="let sort of sorts"
-                  (click)="onClickSortItem(sort)"
-                  [class]="{'active-sort': sort == sortValue, 'inactive-sort': sort != sortValue}"
-                  class="px-sm-3 py-sm-1"
-                  data-toggle="collapse"
-                  href="#sortList">{{sort}}</li>
-              </ul>
-            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 px-sm-0">
+      <div class="row py-sm-2 pr-sm-3 sort-list-toggle" data-toggle="collapse" href="#sortList">
+        <div class="col-sm-auto pl-sm-3">
+          Sort By:
+        </div>
+        <div class="col-sm px-sm-0">
+          <div>{{sortSelected}}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-auto pl-sm-0 dummy-spacer">
+          Sort By:
+        </div>
+        <div class="col-sm px-sm-0 item-list-outer-container">
+          <div class="collapse rounded-bottom item-list-inner-container" id="sortList">
+            <ul class="px-sm-0 item-list">
+              <li
+                *ngFor="let sort of sorts"
+                (click)="onClickSortItem(sort)"
+                [class]="{'active-item': sort == sortSelected, 'inactive-item': sort != sortSelected}"
+                class="px-sm-3 py-sm-1"
+                data-toggle="collapse"
+                href="#sortList">{{sort}}</li>
+            </ul>
           </div>
         </div>
       </div>

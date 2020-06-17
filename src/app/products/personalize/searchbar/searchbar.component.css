@@ -6,8 +6,11 @@ a {
   text-decoration: none;
 }
 
-/* The styles below are for the search bar */
+.dummy-spacer {
+  opacity: 0;
+}
 
+/* The styles below are for the search bar */
 .search-bar {
   background-color: #f0f0f0;
 }
@@ -22,39 +25,41 @@ a {
   outline: none;
 }
 
-/* The styles below are for the sort by */
-.sort-list-toggle {
+/* The styles below are for the filters */
+.filter-toggle {
   cursor: pointer;
-  width: fit-content;
 }
 
-.dummy-spacer {
-  opacity: 0;
-}
-
-.sort-list-outer-container {
+/* The styles below are for the filters and the sort by */
+.item-list-outer-container {
   position: relative;
 }
 
-.sort-list-inner-container {
+.item-list-inner-container {
   position: absolute;
   background-color: #f8f8f8;
   z-index: 1;
 }
 
-.sort-list {
+.item-list {
   list-style-type: none;
   margin-bottom: 0;
 }
 
-.sort-list li:hover {
+.item-list li:hover {
   cursor: pointer;
 }
 
-.active-sort {
+.active-item {
   background-color: #e0e0e0;
 }
 
-.inactive-sort:hover {
+.inactive-item:hover {
   background-color: #f0f0f0;
+}
+
+/* The styles below are for the sort by */
+.sort-list-toggle {
+  cursor: pointer;
+  width: fit-content;
 }
