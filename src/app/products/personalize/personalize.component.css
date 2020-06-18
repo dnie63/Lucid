@@ -9,3 +9,52 @@
 .inactive-item-div:hover {
   background-color: #f0f0f0;
 }
+
+/* The following styles are for the sliding products (copied over from the featured component) */
+.container-products {
+  margin-bottom: 6rem;
+}
+
+.overflow-container {
+  overflow: hidden;
+}
+
+.shorten-container {
+  height: 22rem;
+  transition: height 0.75s ease-out;
+}
+
+.widen-container {
+  height: 42rem;
+  transition: height 0.75s ease-out;
+}
+
+.slide-container {
+  position: absolute;
+  z-index: -1;
+}
+
+.row-products {
+  padding-top: 1rem;
+}
+
+.nav-arrow:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+
+.pagination {
+  background-color: #f0f0f0;
+}
+
+.page-number {
+  cursor: pointer;
+}
+
+.inactive-page:hover {
+  background-color: #e0e0e0;
+}
+
+.active-page {
+  background-color: #c8c8c8;
+}

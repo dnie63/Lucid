@@ -2,7 +2,7 @@
 <div class="container-fluid mt-2 mb-5">
   <div class="row">
     <div class="col-sm-1"></div>
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <h4 class="text-center">Preferences</h4>
       <h5 class="text-center mt-3">Clothing Category</h5>
       <div class="row row-cols-1">
@@ -52,6 +52,62 @@
             'inactive-item-div': !brandStoresSelected.includes(brandStore)
           }">
           {{brandStore}}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <div class="container-fluid container-products">
+        <div
+          class="row justify-content-center overflow-container"
+          [class]="{'shorten-container': shortSupply, 'widen-container': !shortSupply}">
+          <div class="col-1 d-flex align-items-center">
+            <div
+              class="rounded-left py-3 nav-arrow"
+              (click)="onSlide(false, -1)"
+              *ngIf="currPage > 0">
+              <img src="./assets/images/left-arrow.svg" alt="left arrow" height="35">
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="container slide-container"
+              *ngFor="let batch of products"
+              [@slideInOut]="slideRight ? 'right' : 'left'">
+              <div class="row row-cols-{{productsPerRow}} row-products">
+                <div class="col mb-3" *ngFor="let product of batch">
+                  <app-product
+                    [name]="product.name"
+                    [source]="product.source"
+                    [link]="product.link"
+                    [imagePath]="product.imagePath"
+                    [price]="product.price">
+                  </app-product>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-1 d-flex align-items-center">
+            <div
+              class="rounded-right py-3 nav-arrow"
+              (click)="onSlide(true, 1)"
+              *ngIf="currPage * productsPerPage + productsPerPage < maxProducts">
+              <img src="./assets/images/right-arrow.svg" alt="right arrow" height="35">
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-3 px-0 rounded pagination">
+            <div class="container-fluid">
+              <div class="row">
+                <div
+                  class="col text-center font-weight-bold py-2 page-number"
+                  *ngFor="let page of pageNumbers"
+                  [class]="{'active-page': page == currPage + 1,
+                    'inactive-page': page != currPage + 1}"
+                  (click)="onClickPage(page - 1)">{{page}}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
