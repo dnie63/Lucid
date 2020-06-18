@@ -79,6 +79,12 @@ export class PersonalizeComponent {
         this.firstIndex = index;
         this.firstActive = pref;
         this.firstSelected = true;
+        this.secondSelected = false;
+        this.secondIndex = null;
+        this.secondActive = null;
+        this.thirdSelected = false;
+        this.thirdIndex = null;
+        this.thirdActive = null;
       } else {
         this.firstSelected = false;
         this.firstIndex = null;
@@ -95,6 +101,9 @@ export class PersonalizeComponent {
         this.secondIndex = index;
         this.secondActive = pref;
         this.secondSelected = true;
+        this.thirdSelected = false;
+        this.thirdIndex = null;
+        this.thirdActive = null;
       } else {
         this.secondSelected = false;
         this.secondIndex = null;
