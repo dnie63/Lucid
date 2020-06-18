@@ -1,1 +1,59 @@
 <app-personalize-searchbar></app-personalize-searchbar>
+<div class="container-fluid mt-2 mb-5">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-3">
+      <h4 class="text-center">Preferences</h4>
+      <h5 class="text-center mt-3">Clothing Category</h5>
+      <div class="row row-cols-1">
+        <div
+          class="col text-center py-sm-1 item-div"
+          *ngFor="let pref of firstPreferences; let i = index"
+          (click)="onClickPreference(0, i, pref)"
+          [class]="{
+            'active-item-div': pref == firstActive,
+            'inactive-item-div': pref != firstActive
+          }">
+          {{pref}}
+        </div>
+      </div>
+      <div class="row row-cols-1" *ngIf="firstSelected">
+        <div
+          class="col text-center py-sm-1 item-div"
+          *ngFor="let pref of secondPreferences[firstIndex]; let i = index"
+          (click)="onClickPreference(1, i, pref)"
+          [class]="{
+            'active-item-div': pref == secondActive,
+            'inactive-item-div': pref != secondActive
+          }">
+          {{pref}}
+        </div>
+      </div>
+      <div class="row row-cols-1" *ngIf="secondSelected">
+        <div
+          class="col text-center py-sm-1 item-div"
+          *ngFor="let pref of thirdPreferences[firstIndex][secondIndex]; let i = index"
+          (click)="onClickPreference(2, i, pref)"
+          [class]="{
+            'active-item-div': pref == thirdActive,
+            'inactive-item-div': pref != thirdActive
+          }">
+          {{pref}}
+        </div>
+      </div>
+      <h5 class="text-center mt-4">Brands and Stores</h5>
+      <div class="row row-cols-1">
+        <div
+          class="col text-center py-sm-1 item-div"
+          *ngFor="let brandStore of brandStores"
+          (click)="onClickBrandStore(brandStore)"
+          [class]="{
+            'active-item-div': brandStoresSelected.includes(brandStore),
+            'inactive-item-div': !brandStoresSelected.includes(brandStore)
+          }">
+          {{brandStore}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
