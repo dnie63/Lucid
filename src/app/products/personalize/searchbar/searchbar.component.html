@@ -19,7 +19,7 @@
         <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#priceList">
           Price
         </div>
-        <div class="col-sm-auto filter-toggle">
+        <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#sizeList">
           Size
         </div>
         <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#availList">
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="row pl-sm-4">
-        <div class="col-sm-2 dummy-spacer">
+        <div class="col-sm-auto dummy-spacer">
           Filters:
         </div>
         <div class="col-sm px-sm-0 item-list-outer-container">
@@ -41,8 +41,23 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-auto">
-          Size
+        <div class="col-sm px-sm-0 item-list-outer-container">
+          <div class="collapse rounded-bottom item-list-inner-container" id="sizeList">
+            <div class="row" *ngFor="let sizeArray of sizes; let i = index">
+              <div class="col-sm-2">{{sizeArray[0]}}</div>
+              <div class="col-sm-10">
+                <div class="row row-cols-6">
+                  <div
+                    class="col-sm item-div"
+                    *ngFor="let sizeVal of sizeArray.slice(1)"
+                    (click)="onClickSizeItem(sizeVal, i)"
+                    [class]="{'active-item': sizesSelected[i].includes(sizeVal), 'inactive-item': !sizesSelected[i].includes(sizeVal)}">
+                    {{sizeVal}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-sm px-sm-0 item-list-outer-container">
           <div class="collapse rounded-bottom item-list-inner-container" id="availList">

@@ -30,6 +30,10 @@ a {
   cursor: pointer;
 }
 
+.item-div {
+  cursor: pointer;
+}
+
 /* The styles below are for the filters and the sort by */
 .item-list-outer-container {
   position: relative;

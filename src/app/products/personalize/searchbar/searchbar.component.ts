@@ -18,6 +18,17 @@ export class PersonalizeSearchbarComponent {
     'Over $200'
   ]
 
+  sizesSelected = [
+    ['Standard'],
+    ['Chest'],
+    ['Arm']
+  ]
+  sizes = [
+    ['Standard', 'XS', 'S', 'M', 'L', 'XL', 'XXL'],
+    ['Chest', '32', '34', '35', '37', '38', '40', '41', '43', '44', '46', '47', '49'],
+    ['Arm', '32', '33', '34', '35', '36', '36.5']
+  ]
+
   availsSelected: string[] = [];
   avails = [
     'In Stock',
@@ -52,6 +63,15 @@ export class PersonalizeSearchbarComponent {
       this.pricesSelected.push(price);
     } else {
       this.pricesSelected.splice(index, 1);
+    }
+  }
+
+  onClickSizeItem(sizeVal: string, arrayIndex: number) {
+    let index = this.sizesSelected[arrayIndex].indexOf(sizeVal);
+    if (index == -1) {
+      this.sizesSelected[arrayIndex].push(sizeVal);
+    } else {
+      this.sizesSelected[arrayIndex].splice(index, 1);
     }
   }
 
