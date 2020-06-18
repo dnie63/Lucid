@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-personalize-searchbar',
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.css']
 })
-export class PersonalizeSearchbarComponent {
+export class PersonalizeSearchbarComponent implements OnInit {
 
   searchValue: string;
 
@@ -76,6 +76,12 @@ export class PersonalizeSearchbarComponent {
     } else {
       this.sizesSelected[arrayIndex].splice(index, 1);
     }
+  }
+
+  ngOnInit() {
+    $('.filter-toggle').click(() => {
+      $('.filter-inner-container').collapse('hide');
+    })
   }
 
 }
