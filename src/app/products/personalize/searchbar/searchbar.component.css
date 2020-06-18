@@ -2,10 +2,6 @@
   margin-top: 1.75rem;
 }
 
-a {
-  text-decoration: none;
-}
-
 .dummy-spacer {
   opacity: 0;
 }
@@ -23,15 +19,6 @@ a {
 
 .search-input:focus {
   outline: none;
-}
-
-/* The styles below are for the filters */
-.filter-toggle {
-  cursor: pointer;
-}
-
-.item-div {
-  cursor: pointer;
 }
 
 /* The styles below are for the filters and the sort by */
@@ -66,4 +53,27 @@ a {
 .sort-list-toggle {
   cursor: pointer;
   width: fit-content;
+}
+
+/* The styles below are for the filters */
+.filter-toggle {
+  cursor: pointer;
+}
+
+.filter-inner-container {
+  width: max-content;
+  left: 0;
+  top: 2rem;
+}
+
+.size-list {
+  float: left;
+}
+
+.size-title {
+  background-color: #f8f8f8;
+}
+
+.size-list .size-title:hover {
+  cursor: default;
 }

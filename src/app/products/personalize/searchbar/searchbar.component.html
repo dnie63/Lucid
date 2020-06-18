@@ -16,56 +16,48 @@
         <div class="col-sm-auto">
           Filters:
         </div>
-        <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#priceList">
-          Price
-        </div>
-        <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#sizeList">
-          Size
-        </div>
-        <div class="col-sm-auto filter-toggle" data-toggle="collapse" href="#availList">
-          Availability
-        </div>
-      </div>
-      <div class="row pl-sm-4">
-        <div class="col-sm-auto dummy-spacer">
-          Filters:
-        </div>
-        <div class="col-sm px-sm-0 item-list-outer-container">
-          <div class="collapse rounded-bottom item-list-inner-container" id="priceList">
+        <div class="col-sm-auto px-sm-0 item-list-outer-container">
+          <div class="px-sm-3 filter-toggle" data-toggle="collapse" href="#priceList">Price</div>
+          <div class="collapse rounded-bottom item-list-inner-container filter-inner-container" id="priceList">
             <ul class="px-sm-0 item-list">
               <li
                 *ngFor="let price of prices"
                 (click)="onClickPriceItem(price)"
-                [class]="{'active-item': pricesSelected.includes(price), 'inactive-item': !pricesSelected.includes(price)}"
+                [class]="{
+                  'active-item': pricesSelected.includes(price),
+                  'inactive-item': !pricesSelected.includes(price)
+                }"
                 class="px-sm-3 py-sm-1">{{price}}</li>
             </ul>
           </div>
         </div>
-        <div class="col-sm px-sm-0 item-list-outer-container">
-          <div class="collapse rounded-bottom item-list-inner-container" id="sizeList">
-            <div class="row" *ngFor="let sizeArray of sizes; let i = index">
-              <div class="col-sm-2">{{sizeArray[0]}}</div>
-              <div class="col-sm-10">
-                <div class="row row-cols-6">
-                  <div
-                    class="col-sm item-div"
-                    *ngFor="let sizeVal of sizeArray.slice(1)"
-                    (click)="onClickSizeItem(sizeVal, i)"
-                    [class]="{'active-item': sizesSelected[i].includes(sizeVal), 'inactive-item': !sizesSelected[i].includes(sizeVal)}">
-                    {{sizeVal}}
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div class="col-sm-auto px-sm-0 item-list-outer-container">
+          <div class="px-sm-3 filter-toggle" data-toggle="collapse" href="#sizeList">Size</div>
+          <div class="collapse rounded-bottom item-list-inner-container filter-inner-container" id="sizeList">
+            <ul class="px-sm-0 item-list size-list" *ngFor="let sizeArray of sizes; let i = index">
+              <li
+                *ngFor="let sizeVal of sizeArray; let j = index"
+                (click)="onClickSizeItem(sizeVal, i, j)"
+                [class]="{
+                  'active-item': sizesSelected[i].includes(sizeVal) && j != 0,
+                  'inactive-item': !sizesSelected[i].includes(sizeVal) && j != 0,
+                  'size-title': j == 0
+                }"
+                class="px-sm-3 py-sm-1">{{sizeVal}}</li>
+            </ul>
           </div>
         </div>
-        <div class="col-sm px-sm-0 item-list-outer-container">
-          <div class="collapse rounded-bottom item-list-inner-container" id="availList">
+        <div class="col-sm-auto px-sm-0 item-list-outer-container">
+          <div class="px-sm-3 filter-toggle" data-toggle="collapse" href="#availList">Availability</div>
+          <div class="collapse rounded-bottom item-list-inner-container filter-inner-container" id="availList">
             <ul class="px-sm-0 item-list">
               <li
                 *ngFor="let avail of avails"
                 (click)="onClickAvailItem(avail)"
-                [class]="{'active-item': availsSelected.includes(avail), 'inactive-item': !availsSelected.includes(avail)}"
+                [class]="{
+                  'active-item': availsSelected.includes(avail),
+                  'inactive-item': !availsSelected.includes(avail)
+                }"
                 class="px-sm-3 py-sm-1">{{avail}}</li>
             </ul>
           </div>

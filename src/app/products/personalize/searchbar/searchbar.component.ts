@@ -66,7 +66,10 @@ export class PersonalizeSearchbarComponent {
     }
   }
 
-  onClickSizeItem(sizeVal: string, arrayIndex: number) {
+  onClickSizeItem(sizeVal: string, arrayIndex: number, sizeIndex: number) {
+    if (sizeIndex == 0) {
+      return;
+    }
     let index = this.sizesSelected[arrayIndex].indexOf(sizeVal);
     if (index == -1) {
       this.sizesSelected[arrayIndex].push(sizeVal);
