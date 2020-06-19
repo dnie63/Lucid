@@ -80,7 +80,7 @@ export class PersonalizeSearchbarComponent implements OnInit {
 
   ngOnInit() {
     $('.filter-toggle').click(() => {
-      $('.filter-inner-container').collapse('hide');
+      (<any>$('.filter-inner-container')).collapse('hide');
     })
   }
 
