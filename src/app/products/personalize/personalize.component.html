@@ -5,40 +5,49 @@
     <div class="col-sm-2">
       <h4 class="text-center">Preferences</h4>
       <h5 class="text-center mt-3">Clothing Category</h5>
-      <div class="row row-cols-1">
+      <div class="row row-cols-1" *ngIf="!firstSelected">
         <div
-          class="col text-center py-sm-1 item-div"
+          class="col text-center py-sm-1 item-div inactive-item-div"
           *ngFor="let pref of firstPreferences; let i = index"
-          (click)="onClickPreference(0, i, pref)"
-          [class]="{
-            'active-item-div': pref == firstActive,
-            'inactive-item-div': pref != firstActive
-          }">
+          (click)="onClickPreference(0, i, pref)">
           {{pref}}
         </div>
       </div>
       <div class="row row-cols-1" *ngIf="firstSelected">
         <div
-          class="col text-center py-sm-1 item-div"
+          class="col text-center py-sm-1 item-div active-item-div"
+          (click)="onClickPreference(0, firstIndex, firstActive)">
+          {{firstActive}}
+        </div>
+      </div>
+      <div class="row row-cols-1" *ngIf="firstSelected && !secondSelected">
+        <div
+          class="col text-center py-sm-1 item-div inactive-item-div"
           *ngFor="let pref of secondPreferences[firstIndex]; let i = index"
-          (click)="onClickPreference(1, i, pref)"
-          [class]="{
-            'active-item-div': pref == secondActive,
-            'inactive-item-div': pref != secondActive
-          }">
+          (click)="onClickPreference(1, i, pref)">
           {{pref}}
         </div>
       </div>
       <div class="row row-cols-1" *ngIf="secondSelected">
         <div
-          class="col text-center py-sm-1 item-div"
+          class="col text-center py-sm-1 item-div active-item-div"
+          (click)="onClickPreference(1, secondIndex, secondActive)">
+          {{secondActive}}
+        </div>
+      </div>
+      <div class="row row-cols-1" *ngIf="secondSelected && !thirdSelected">
+        <div
+          class="col text-center py-sm-1 item-div inactive-item-div"
           *ngFor="let pref of thirdPreferences[firstIndex][secondIndex]; let i = index"
-          (click)="onClickPreference(2, i, pref)"
-          [class]="{
-            'active-item-div': pref == thirdActive,
-            'inactive-item-div': pref != thirdActive
-          }">
+          (click)="onClickPreference(2, i, pref)">
           {{pref}}
+        </div>
+      </div>
+      <div class="row row-cols-1" *ngIf="thirdSelected">
+        <div
+          class="col text-center py-sm-1 item-div active-item-div"
+          (click)="onClickPreference(2, thirdIndex, thirdActive)">
+          {{thirdActive}}
         </div>
       </div>
       <h5 class="text-center mt-4">Brands and Stores</h5>
