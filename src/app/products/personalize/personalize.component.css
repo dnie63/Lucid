@@ -19,13 +19,18 @@
   overflow: hidden;
 }
 
-.shorten-container {
+.short-container {
   height: 22rem;
   transition: height 0.75s ease-out;
 }
 
-.widen-container {
+.medium-container {
   height: 42rem;
+  transition: height 0.75s ease-out;
+}
+
+.tall-container {
+  height: 62rem;
   transition: height 0.75s ease-out;
 }
 

@@ -175,7 +175,7 @@ export class PersonalizeComponent implements OnInit {
 
 
 
-  productsPerPage = 6;
+  productsPerPage = 9;
   productsPerRow = 3;
   maxProducts: number;
 
@@ -186,6 +186,8 @@ export class PersonalizeComponent implements OnInit {
 
   slideRight: boolean;
   shortSupply: boolean;
+  mediumSupply: boolean;
+  tallSupply: boolean;
 
   maxPages = 5;
   pageNumbers: number[];
@@ -204,6 +206,8 @@ export class PersonalizeComponent implements OnInit {
         this.products.pop();
         this.products.push(products.currProducts);
         this.shortSupply = this.products[0].length <= this.productsPerRow;
+        this.mediumSupply = this.products[0].length <= this.productsPerRow * 2 && !this.shortSupply;
+        this.tallSupply = this.products[0].length <= this.productsPerRow * 3 && !this.shortSupply && !this.mediumSupply;
       });
 
     this.productsService.getPersonalizeProducts(this.currPage, this.productsPerPage);

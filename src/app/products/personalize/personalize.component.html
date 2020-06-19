@@ -59,7 +59,11 @@
       <div class="container-fluid container-products">
         <div
           class="row justify-content-center overflow-container"
-          [class]="{'shorten-container': shortSupply, 'widen-container': !shortSupply}">
+          [class]="{
+            'short-container': shortSupply,
+            'medium-container': mediumSupply,
+            'tall-container': tallSupply
+          }">
           <div class="col-1 d-flex align-items-center">
             <div
               class="rounded-left py-3 nav-arrow"
