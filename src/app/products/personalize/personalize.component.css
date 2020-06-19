@@ -10,11 +10,8 @@
   background-color: #f0f0f0;
 }
 
-/* The following styles are for the sliding products (copied over from the featured component) */
-.container-products {
-  margin-bottom: 6rem;
-}
-
+/* The following styles are for the sliding products (copied over from the featured component and
+changed slightly to adapt to the personalize component's needs) */
 .overflow-container {
   overflow: hidden;
 }
