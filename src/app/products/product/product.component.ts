@@ -7,10 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class ProductComponent {
 
-  @Input() name = "Cream Hoodie";
-  @Input() source = "Abercrombie"
-  @Input() link = "https://www.abercrombie.com/shop/us/p/essential-hoodie-41085822?categoryId=12351&seq=01&faceout=prod1";
-  @Input() imagePath = "./assets/tempbackendimgs/puppy.jpg";
-  @Input() price = 17.99;
+  @Input() name: string;
+  @Input() source: string;
+  @Input() link: string;
+  @Input() imagePath: string;
+  @Input() price: number;
 
 }
