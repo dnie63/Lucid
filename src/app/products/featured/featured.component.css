@@ -22,11 +22,16 @@
 
 .slide-container {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
 
 .row-products {
   padding-top: 1rem;
+}
+
+.nav-arrow {
+  position: relative;
+  z-index: 1;
 }
 
 .nav-arrow:hover {
